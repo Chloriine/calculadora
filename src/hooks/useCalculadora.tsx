@@ -21,7 +21,7 @@ export const useCalculadora = () =>{
             setFormula(`${ primeraParteFormula} ${UltimaOperacion.current} ${numero}`);
         } else {
             setFormula(numero);
-        }
+        }   
         
     }, [numero]);
 
@@ -71,24 +71,9 @@ export const useCalculadora = () =>{
         setNumero('0');
     }
 
-    const operacionDividir = () => {
+    const operaciones = (operacion: Operadores) => {
         establecerUltimoNumero();
-        UltimaOperacion.current = Operadores.dividir;
-    }
-
-    const operacionMultiplicar = () => {
-        establecerUltimoNumero();
-        UltimaOperacion.current = Operadores.multiplicar;
-    }
-
-    const operacionRestar = () => {
-        establecerUltimoNumero();
-        UltimaOperacion.current = Operadores.restar;
-    }
-
-    const operacionSumar = () => {
-        establecerUltimoNumero();
-        UltimaOperacion.current = Operadores.sumar;
+        UltimaOperacion.current = operacion;
     }
 
     const calcularResultado = () => {
@@ -98,6 +83,10 @@ export const useCalculadora = () =>{
         const num2 = Number(segundoValor);
 
         if (isNaN(num2)) return num1;
+
+        if(operacion === Operadores.dividir && num2 === 0){
+            return 'MEC';
+        } 
 
         switch(operacion) {
             case Operadores.sumar:
@@ -158,11 +147,9 @@ export const useCalculadora = () =>{
         clean,
         cambiarSigno,
         borrarDigito,
-        operacionDividir,
-        operacionMultiplicar,
-        operacionRestar,
-        operacionSumar,
+        operaciones,
         calcularResultado,
-        resultado
+        resultado,
+        Operadores
     }
 };
