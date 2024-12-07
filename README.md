@@ -15,7 +15,7 @@ Crear un dispositivo virtual desde Android Studio para poder lanzar la aplicaci√
 
 Con el dispositivo virtual creado, solo hay que ejecutarlo. 
 
-Ahora, hay que clonar el proyecto de mi repositorio de GitHub a Visual Studio Code. Para ello []
+Ahora, hay que clonar el proyecto de mi repositorio de GitHub a Visual Studio Code. Para ello en la terminal, escribe: git clone https://github.com/Chloriine/calculadora.git.
 
 Con el proyecto dentro de Visual Studio Code, abre una terminal y escribe: npm run start. Cuando cargue, escribe en la terminal la letra 'a' y se cargar√° en el dispositivo Android creado anteriormente. 
 
